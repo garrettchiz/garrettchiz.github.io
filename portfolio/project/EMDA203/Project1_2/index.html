@@ -1,0 +1,212 @@
+<HTML>
+<!-- EMDA 203 - Project_1_2 Template - Spring 2020
+
+Place the assets on a canvas using JavaScript and CreateJS.  
+Set up procedural target movement and keyboard input for hero movement.
+
+-->
+<head>
+<script src="js/createjs.min.js"></script>
+<script src="js/KeyMonkey.js"></script>
+<script src="js/collisionGnome.js"></script>
+<script>
+
+	// ************************ GLOBAL VARIABLES *********************
+	var myStage;
+	var stageWidth;
+	var stageHeight;
+	var myFrameRate = 60;
+
+	var target01;
+	var target01hitLeft = 0;
+	var target01hitRight = 0;
+
+	var target02;
+	var target02hitTop = 0;
+	var target02hitBottom = 0;
+
+	var target03;
+	var target03hitLeft = 0;
+	var target03hitRight = 0;		
+
+	var targetMaxSpeed = 4; // actual max speed will be targetMaxSpeed + targetMinSpeed...
+	var targetMinSpeed = 2;
+	var bg;
+
+
+	var heroStartSpeed = 5;
+	// HERO START POSITION VARIABLES
+	var heroStartPositionX = 200;
+	var heroStartPositionY = 100;
+
+	// ************ INITIALIZATION - Happens only once ****************
+	function init(){
+		myStage = new createjs.Stage(document.getElementById("myCanvas"));
+		stageWidth = myStage.canvas.width;
+		stageHeight = myStage.canvas.height;
+
+		createjs.Ticker.addEventListener('tick', gameLoop);
+		createjs.Ticker._setFPS(myFrameRate);
+		initGame();
+	}// end init()
+	
+	function initGame(){
+	
+		// ADDING THE BACKGROUND TO THE STAGE
+		bg = new createjs.Bitmap("images/background.png");
+		bg.x = 0;
+		bg.y = 0;
+		myStage.addChild(bg);
+
+		// ADDING A TARGET TO THE STAGE
+		 target01 = new createjs.Bitmap("images/target01.png");
+		 target01.regX = 32;
+		 target01.regY = 32;
+		 target01.x = Math.random()*stageWidth; 
+		 target01.y = 32;
+		 target01.scale = 0.08;
+		 target01.speed = Math.random()*targetMaxSpeed + targetMinSpeed;
+		 myStage.addChild(target01);
+
+		// ADDING A TARGET TO THE STAGE
+		 target02 = new createjs.Bitmap("images/target02.png");
+		 target02.regX = 32;
+		 target02.regY = 32;
+		 target02.x = Math.random()*stageWidth;
+		 target02.y = 32;
+		 target02.scale = 0.08;
+		 target02.speed = Math.random()*targetMaxSpeed + targetMinSpeed;
+		 myStage.addChild(target02);
+
+		// ADDING A TARGET TO THE STAGE
+		 target03 = new createjs.Bitmap("images/target03.png");
+		 target03.regX = 32;
+		 target03.regY = 32;
+		 target03.x = Math.random()*stageWidth;
+		 target03.y = 32;
+		 target03.scale = 0.08;
+		 target03.speed = Math.random()*targetMaxSpeed + targetMinSpeed;
+		 myStage.addChild(target03);		
+			
+		// ADDING HERO TO THE STAGE
+		hero = new createjs.Bitmap("images/hero.png");
+		hero.x = heroStartPositionX;
+		hero.y = heroStartPositionY;
+		hero.regX = 64
+		hero.regY = 64
+		hero.scale = 0.3;
+		hero.speed = heroStartSpeed;
+		myStage.addChild(hero);
+			
+	}
+
+
+	// ***************** THE MAIN LOOP  ************
+
+	function gameLoop(evt){
+		// put code in here that will change every 'tick'
+		
+        handleKeyboardInput();  	// Check for keyboard input
+		moveTarget1(target01);  	// move targets...
+		moveTarget2(target02);
+		moveTarget3(target03);
+		myStage.update();
+	}// end drawNewFrame()
+
+
+	// ***************** KEYBOARD INPUT FUNCTION  ************
+	function handleKeyboardInput(){
+		/* write code to allow key strokes to control movement of your hero.
+		   for example:*/
+		   
+		if(keyMonkey["w"] || keyMonkey["up"]) 	{hero.y -= hero.speed; }
+		if(keyMonkey["s"] || keyMonkey["down"]) 	{hero.y += hero.speed; }
+		if(keyMonkey["d"] || keyMonkey["right"]) {hero.x += hero.speed; }
+		if(keyMonkey["a"] || keyMonkey["left"]) 	{hero.x -= hero.speed; }
+
+	}// end handleKeyboardInput()
+
+
+	// ***************** MOVE TARGET FUNCTION  ************
+	function moveTarget1(thisTarget){
+		if(target01hitLeft == 0 && target01hitRight == 0){
+			thisTarget.x -= thisTarget.speed;
+			if(thisTarget.x <= 0){
+				target01hitLeft = 1;
+			}
+		}
+		if(target01hitLeft == 1){
+			thisTarget.x += thisTarget.speed;
+			if(thisTarget.x >= 1520){
+				target01hitRight = 1;
+				target01hitLeft = 0;
+			}			
+		}
+		if(target01hitRight == 1){
+			thisTarget.x -= thisTarget.speed;
+			if(thisTarget.x <= 0){
+				target01hitRight = 0;
+				target01hitLeft = 1;
+			}
+		}
+	}// end moveTarget()
+	function moveTarget2(thisTarget){
+		if(target02hitTop == 0 && target02hitBottom == 0){
+			thisTarget.y += thisTarget.speed;
+			if(thisTarget.y >= 820){
+				target02hitBottom = 1;
+			}
+		}
+		if(target02hitTop == 1){
+			thisTarget.y += thisTarget.speed;
+			if(thisTarget.y >= 820){
+				target02hitBottom = 1;
+				target02hitTop = 0;
+			}
+		}
+		if(target02hitBottom == 1){
+			thisTarget.y -= thisTarget.speed;
+			if(thisTarget.y <= 0){
+				target02hitBottom = 0;
+				target02hitTop = 1;
+			}
+		}
+		
+	}// end moveTarget()
+	function moveTarget3(thisTarget){
+		if(target03hitLeft == 0 && target03hitRight == 0){
+			thisTarget.x -= thisTarget.speed;
+			if(thisTarget.x <= 0){
+				target03hitLeft = 1;
+			}
+		}
+		if(target03hitLeft == 1){
+			thisTarget.x += thisTarget.speed;
+			if(thisTarget.x >= 1520){
+				target03hitRight = 1;
+				target03hitLeft = 0;
+			}			
+		}
+		if(target03hitRight == 1){
+			thisTarget.x -= thisTarget.speed;
+			if(thisTarget.x <= 0){
+				target03hitRight = 0;
+				target03hitLeft = 1;
+			}
+		}
+	}// end moveTarget()
+	
+
+	
+	
+</script>
+
+<title>Garrett's Project 1_2</title>
+</head>
+
+<body onload="init()">
+	<div style="text-align:center;">
+		<canvas id="myCanvas" width="1600" height="900">Sorry. You need an HTML5 compatible browser to see this.</canvas>
+	</div>
+</body>
+</HTML>
