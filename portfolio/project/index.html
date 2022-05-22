@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="../assets/reset.css">
+    <link rel="icon" type="image/x-icon" href="../assets/icon_big.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
+        @font-face {
+            font-family: bebasneuelight;
+            src: url(assets/font/BebasNeue\ Light.ttf);
+        }
+        @font-face {
+            font-family: bebasneue;
+            src: url(assets/font/BebasNeue-Regular.ttf);
+        }
         html{
             background-color: black;
+            color: white;
         }
-        body{
+        #navbar {
             width: 100%;
+            display: block;
+            height: 80px;
+        }
+        #container {
+            color: white;
+            text-align: center;
+            margin: auto;
+            position: relative;
+            max-width: 400px;
+            height: 100%;
+        }
+        #title {
+            font-family: bebasneuelight;
+            font-size: 60px;
         }
     </style>
 </head>
 <body>
-<a href="../"><span style="
-border-radius: 50%;
-top: 50px;
-left: 30px;
-height:80px;
-width:80px;
-background-image: url(../assets/back.png);
-background-position: center center;
-background-size: 50%;
-background-repeat: no-repeat;
-position: absolute;
-
-
-"></span>
-</a>
+    <div id="container">
+        <div id="navbar">
+            <a href="../"><span style="
+            border-radius: 50%;
+            top: 0px;
+            left: -10px;
+            height:80px;
+            width:80px;
+            background-image: url(../assets/back.png);
+            background-position: center center;
+            background-size: 40%;
+            background-repeat: no-repeat;
+            position: absolute;
+            "></span>
+            </a>
+        </div>
+        <h1 id="title">Projects</h1>
+    </div>
 </body>
 </html>
