@@ -16,6 +16,10 @@
             font-family: bebasneue;
             src: url(../assets/font/BebasNeue-Regular.ttf);
         }
+        @font-face {
+            font-family: helvetican;
+            src: url(../assets/font/helvetica.otf);
+        }
         html{
             background-color: black;
             color: white;
@@ -32,6 +36,7 @@
             position: relative;
             max-width: 400px;
             height: 100%;
+            transition: 0.5s;
         }
         #title {
             font-family: bebasneuelight;
@@ -40,19 +45,26 @@
         #entry {
             margin-top: 50px;
             font-family: bebasneuelight;
-            background-color: white;
-            color: black;
+            color: rgb(255, 255, 255);
             width: 90%;
             margin-left: 5%;
             height: 300px;
             border-radius: 20px;
             background-size: 100%;
             background-repeat: no-repeat;
-            
+            text-align: left;
+            transition: 0.5s;
         }
         #entry h1{
             font-size: 55px;
             padding-top: 20px;
+            text-align: center;
+        }
+        #entry p{
+            display: none;
+        }
+        a {
+            text-decoration: none;
         }
         @media only screen and (min-width: 780px) {
             #container {
@@ -60,13 +72,24 @@
             }   
             #entry {
                 height: 600px; 
+                transition: 0.5s;
             }
             #entry:hover {
                 box-shadow:
-                0 0 5px 5px rgb(125, 125, 125),
-                0 0 5px 5px rgb(109, 109, 109),
-                0 0 5px 5px rgb(112, 112, 112);
-            }    
+                0 0 2px 2px rgb(255, 255, 255),
+                0 0 2px 2px rgb(255, 255, 255),
+                0 0 2px 2px rgb(255, 255, 255);  
+                animation-fill-mode: forwards;
+                transition: 0.5s;
+            }
+            #entry p{
+                display: inline-block;
+                font-size: 30px;
+                padding-top: 30px;
+                padding-left: 30px;
+                padding-right: 30px;
+                font-family: helvetican;
+            } 
         }
     </style>
 </head>
@@ -88,9 +111,16 @@
             </a>
         </div>
         <h1 id="title">Projects</h1>
-        <div id="entry" style="background-image:url(covers/foodofthevalley.png); ">
-            <h1>Food of the Valley Blog Site</h1>    
-        </div>
+        <a href="foodofthevalley/"><div id="entry" style="background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('covers/foodofthevalley.png');">
+            <h1>Food of the Valley Blog Site</h1>
+            <p>Food of the Valley is a blog all about local food and drinks here in Southern Oregon. The topics we cover include food, restaurants, wine, and coffee. WordPress was our platform of choice for this project and we used Twitter and Instagram for promotion. </p>
+            <p>2022</p>  
+        </div></a>
+        <a href="perkup/"><div id="entry" style="background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('covers/perkup.png');">
+            <h1>"Perk Up" Product Mockup</h1>
+            <p>Food of the Valley is a blog all about local food and drinks here in Southern Oregon. The topics we cover include food, restaurants, wine, and coffee. WordPress was our platform of choice for this project and we used Twitter and Instagram for promotion. </p>
+            <p>2022</p>  
+        </div></a>
     </div>
 </body>
 </html>
