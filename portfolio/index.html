@@ -26,10 +26,16 @@
                 opacity: 1;
             }
         }
+        @keyframes fadein {
+         0%{opacity: 0;}   
+        100%{opacity: 1;}         
+}
         html{
             background-color: black;
+
         }
         #title{
+            animation: fadein 0.7s;
             font-size: 80px;
             color: white;
             width: 100%;
@@ -65,6 +71,7 @@
             margin-bottom: 450px;
         }
         p {
+            animation: fadein 0.7s;
             font-size: 30px;
             font-family: bebasneuelight;        
         }
