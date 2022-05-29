@@ -1,0 +1,107 @@
+@font-face {
+    font-family: bebasneuelight;
+    src: url(../assets/font/BebasNeue\ Light.ttf);
+}
+@font-face {
+    font-family: bebasneue;
+    src: url(../assets/font/BebasNeue-Regular.ttf);
+}
+@font-face {
+    font-family: helvetican;
+    src: url(../assets/font/helvetica.otf);
+}
+html{
+    background-color: black;
+    color: white;
+}
+#navbar {
+    width: 100%;
+    display: block;
+    height: 80px;
+}
+#container {
+    color: white;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    max-width: 400px;
+    height: 100%;
+    transition: 0.5s;
+}
+#title {
+    font-family: bebasneuelight;
+    font-size: 60px;
+}
+#entry {
+    margin-top: 50px;
+    font-family: bebasneuelight;
+    color: rgb(255, 255, 255);
+    width: 90%;
+    margin-left: 5%;
+    height: 300px;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+    transition: 0.5s;
+    box-shadow:
+        0 0 2px 2px rgb(0, 0, 0),
+        0 0 2px 2px rgb(0, 0, 0),
+        0 0 2px 2px rgb(0, 0, 0);  
+}
+#entry h1{
+    font-size: 55px;
+    padding-top: 20px;
+    text-align: center;
+}
+#entry p{
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+#footer{
+    font-family: helvetican;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+@media only screen and (min-width: 780px) {
+    #container {
+        max-width: 780px;
+    }   
+    #entry {
+        height: 600px; 
+        transition: 0.5s;
+    }
+    #entry:hover {
+        box-shadow:
+        0 0 2px 2px rgb(255, 255, 255),
+        0 0 2px 2px rgb(255, 255, 255),
+        0 0 2px 2px rgb(255, 255, 255);  
+        animation-fill-mode: forwards;
+        transition: 0.5s;
+    }
+    #entry p{
+        display: inline-block;
+        font-size: 30px;
+        padding-top: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-family: helvetican;
+    } 
+}
+@media only screen and (max-width: 780px) {
+   #entry{ 
+       animation: blink 4s infinite;
+       animation-fill-mode: forwards;
+    }
+    @keyframes blink {
+        50%{
+        box-shadow:
+        0 0 2px 2px rgb(255, 255, 255),
+        0 0 2px 2px rgb(255, 255, 255),
+        0 0 2px 2px rgb(255, 255, 255);                     
+        }
+    }
+
+}
