@@ -23,6 +23,18 @@ html{
     display: block;
     height: 80px;
 }
+#backbutton {
+    border-radius: 50%;
+    top: 0px;
+    left: -10px;
+    height:80px;
+    width:80px;
+    background-image: url(../../assets/back.png);
+    background-position: center center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    position: absolute;    
+}
 #container {
     animation: fadein 0.7s;
     color: white;
@@ -36,25 +48,27 @@ html{
     text-align: center;
     font-family: bebasneuelight;
     font-size: 60px;
-    padding-bottom: 70px;
+    padding-bottom: 50px;
 }
 #footer{
     font-family: helvetican;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 50px;
+    text-align: center;
 }
-h1, h2, p {
-    margin-left: 10px;
-    margin-right: 10px;
+h1, h2, p, img {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 30px;    
 }
 h2{
     font-family: helvetican;
     font-size: 40px;
-    padding-bottom: 30px;
 }
 p {
     font-family: helvetican;
     font-size: 25px;
+    line-height: 40px;
 }
 @media only screen and (min-width: 780px) {
     #container {
