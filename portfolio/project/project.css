@@ -33,15 +33,13 @@ html{
     left: -10px;
     height:80px;
     width:80px;
-    background-image: url(../assets/back.png);
     background-position: center center;
     background-size: 40%;
     background-repeat: no-repeat;
     position: absolute;    
 }
 #backtotop{
-    background-image: url(../../assets/arrowblack.png);
-    background-size: 60%;
+    background-size: 45%;
     background-repeat: no-repeat;
     background-position: center;
     height: 75px;
