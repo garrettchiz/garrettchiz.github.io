@@ -14,7 +14,30 @@
         <div id="navbar">
             <a href="../"><span id="backbutton"></span></a>
         </div>
-        <span id="backtotop"></span>
+        <span id="backtotop" onclick="topFunction()"></span>
+        <script>
+            //Get the button
+            var mybutton = document.getElementById("backtotop");
+            
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.transform = "rotate(270deg)";
+                mybutton.style.opacity = 0.9 ;
+              } else {
+                mybutton.style.transform = "rotate(0deg)";
+                mybutton.style.opacity = 0 ;
+              }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+        </script>
         
         <!--  start article  -->
 
