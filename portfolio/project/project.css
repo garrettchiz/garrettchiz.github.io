@@ -81,7 +81,7 @@ html{
     display: flexbox;
     text-align: center;
 }
-h1, h2, p, img {
+h1, h2, p, img, iframe {
     margin-left: 15px;
     margin-right: 15px;
     padding-bottom: 30px;    
