@@ -33,7 +33,7 @@ html{
     left: -10px;
     height:80px;
     width:80px;
-    background-image: url(../../assets/back.png);
+    background-image: url(../assets/back.png);
     background-position: center center;
     background-size: 40%;
     background-repeat: no-repeat;
