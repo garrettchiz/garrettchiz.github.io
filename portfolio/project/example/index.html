@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../../assets/reset.css">
+<link rel="stylesheet" href="../project.css">
+<link rel="icon" type="image/x-icon" href="../../assets/icon_big.png">
+
+<title>GC Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <a href="../"><span id="backbutton"></span></a>
+        </div>
+        <span id="backtotop" onclick="topFunction()"></span>
+        <script>
+            //Get the button
+            var mybutton = document.getElementById("backtotop");
+            
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.transform = "rotate(270deg)";
+                mybutton.style.opacity = 0.9 ;
+              } else {
+                mybutton.style.transform = "rotate(0deg)";
+                mybutton.style.opacity = 0 ;
+              }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+        </script>
+        
+        <!--  start article  -->
+
+        <h1 id="title">Title</h1>
+        <h2>About the Project</h2>
+        <p>test</p>
+        <div id="flex">
+
+        </div>
+        
+        <!--  end article  -->
+
+        <p id="footer">Garrett Chisholm 2022 ©</p>
+
+
+
+    </div>
+</body>
+</html>
+
