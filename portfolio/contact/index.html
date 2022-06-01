@@ -2,31 +2,141 @@
 <html>
 <head>
 <link rel="stylesheet" href="../assets/reset.css">
-<link rel="stylesheet" href="../project/project.css">
 <link rel="icon" type="image/x-icon" href="../assets/icon_big.png">
 
 <title>Garrett Chisholm's Portfolio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+  @font-face {
+    font-family: bebasneuelight;
+    src: url(../assets/font/BebasNeue\ Light.ttf);
+  }
+  @font-face {
+      font-family: bebasneue;
+      src: url(../assets/font/BebasNeue-Regular.ttf);
+  }
+  @font-face {
+      font-family: helvetican;
+      src: url(../assets/font/helvetica.otf);
+  }
+  @keyframes fadein {
+      0%{opacity: 0;}   
+      100%{opacity: 1;}         
+  }
+  @keyframes topbuttonspin {
+      0%{transform: 0deg;}
+      100%{transform: 270deg;}
+  }
+  html{
+      background-color: black;
+      color: white;
+  }
+  #navbar {
+      width: 100%;
+      display: block;
+      height: 80px;
+  }
   #backbutton {
-    background-image: url(../assets/back.png);
+      border-radius: 50%;
+      top: 0px;
+      left: -10px;
+      height:80px;
+      width:80px;
+      background-position: center center;
+      background-size: 40%;
+      background-repeat: no-repeat;
+      position: absolute;    
   }
-  #backtotop {
-    background-image: url(../assets/arrowblack.png);
+  #backtotop{
+      background-size: 45%;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 65px;
+      width: 65px;
+      opacity: 0;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      background-color: rgb(207, 207, 207);
+      border-radius: 50px;
+      transition: 0.3s;
+      animation-fill-mode: forwards;
   }
-  #mailbutton {
-    display: block;
-    width:80px;
-    height: 80px;
-    background-color: white;
-    background-image: url(../assets/contact.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
-    border-radius: 50%;
-    margin-left: 35px;
+  #container {
+      animation: fadein 0.7s;
+      color: white;
+      margin: auto;
+      position: relative;
+      max-width: 400px;
+      height: 100%;
+      
   }
+  #title {
+      text-align: center;
+      font-family: bebasneuelight;
+      font-size: 60px;
+      padding-bottom: 50px;
+  }
+  #footer{
+      font-family: helvetican;
+      padding-top: 20px;
+      padding-bottom: 50px;
+      text-align: center;
+  }
+  #flex {
+      display: flexbox;
+      text-align: center;
+  }
+  h1, h2, p, img, iframe, button {
+      margin-left: 15px;
+      margin-right: 15px;
+      padding-bottom: 30px;    
+  }
+  h2{
+      font-family: helvetican;
+      font-size: 40px;
+  }
+  p {
+      font-family: helvetican;
+      font-size: 25px;
+      line-height: 40px;
+  }
+  a {
+      text-decoration: none;
+      color: rgb(88, 171, 254);
+  }
+  @media only screen and (min-width: 780px) {
+      #container {
+          max-width: 780px;
+      }
+      h1, h2, p, img, iframe, button {
+          margin-left: 40px;
+          margin-right: 40px;
+      }   
+  }
+    #backbutton {
+      background-image: url(../assets/back.png);
+    }
+    #backtotop {
+      background-image: url(../assets/arrowblack.png);
+    }
+    #mailbutton {
+      width:215px;
+      height: 80px;
+      background-color: white;
+      background-image: url(../assets/contact.png);
+      background-repeat: no-repeat;
+      background-position: 15px;
+      background-size: 30%;
+      border-radius: 50px;
+      padding-left: 20px;
+    }
+    #mailstring {
+      font-family: helvetican;
+      font-size: 30px;
+    }
 
 </style>
 </head>
@@ -64,11 +174,8 @@
 
         <h1 id="title">Contact</h1>
         <h2>Let's get in touch!</h2>
-        <span id="mailbutton"></span>
-        <div id="flex">
-
-        </div>
-        
+        <button id="mailbutton"><div id="mailstring">Email</div></button>
+        <div id="flex"></div>        
         <!--  end article  -->
 
         <p id="footer">Garrett Chisholm 2022 ©</p>
