@@ -135,7 +135,19 @@
     }
     #mailstring {
       font-family: helvetican;
-      font-size: 30px;
+      font-size: 35px;
+      padding-top: 16px;
+      padding-left: 40px;
+    }
+    #socials {
+      width:80px;
+      height: 80px;
+      background-color: white;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+      border-radius: 50px;
+      padding-left: 20px;      
     }
 
 </style>
@@ -174,8 +186,13 @@
 
         <h1 id="title">Contact</h1>
         <h2>Let's get in touch!</h2>
-        <button id="mailbutton"><div id="mailstring">Email</div></button>
-        <div id="flex"></div>        
+        <a href="mailto:therealsl9m@gmail.com"><button id="mailbutton"><div id="mailstring">Email</div></button></a>
+        <h2 style="padding-top: 30px;">Socials</h2>
+        <div id="flex">
+          <button id="socials" style="background-image: url(../assets/linkedin.png);"></button>
+          <button id="socials" style="background-image: url(../assets/twitter.png);"></button>
+          <button id="socials" style="background-image: url(../assets/instagram.png);"></button>
+        </div>        
         <!--  end article  -->
 
         <p id="footer">Garrett Chisholm 2022 ©</p>
